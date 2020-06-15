@@ -273,7 +273,7 @@ that is the only way we can vertically and horizontally center it.*/
 .mobile-nav-icon {
   float: right;
   margin-top: 30px;
-  cursor: pointer; /* No href in element */
+  cursor: pointer; /* No href attribute in element. */
   display: none;
 }
 
@@ -287,13 +287,13 @@ that is the only way we can vertically and horizontally center it.*/
  * added by the jQuery code when scrolling past the header section. 
  */
 .sticky {
-  position: fixed; /* The navigation stays always at the same point irrespective of our scrolling. */
+  position: fixed; /* The navigation stays always at the same point irrespective of the scrolling. */
   top: 0;
   left: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.98);
   box-shadow: 0 2px 2px #efefef;
-  z-index: 9999; /* navigation on top of all elements. (9999 is the max value) */
+  z-index: 9999; /* navigation on top of all elements (9999 is the max value). */
 }
 
 .sticky .main-nav { margin-top: 18px; }
@@ -337,7 +337,7 @@ that is the only way we can vertically and horizontally center it.*/
 
 .meal-photo {
   width: 100%;
-  margin: 0; /* Redefine the margin to 0 because the normalize css places some margins. */
+  margin: 0; /* Redefine the margin to 0 because the normalize.css places some margins. */
   overflow: hidden; /* Hide the overflow of 1.15 scale of img. */
   background-color: black;  
 }
@@ -481,8 +481,8 @@ cite img {
   background-color: #fff;
   border-radius: 5px;
   width: 90%;
-  margin-left: 5%; /* (100-90/2) */
-  box-shadow: 0 2px 2px #efefef; /* X-axis offset y-axis offset blur color*/
+  margin-left: 5%; /* Center align */
+  box-shadow: 0 2px 2px #efefef; /* X-axis offset, y-axis offset, blur, color. */
 }
 
 .plan-box div {
@@ -531,7 +531,7 @@ cite img {
 
 .contact-form {
   width: 85%;
-  margin: 0 auto; /* center the contact form inside of its parent element */
+  margin: 0 auto; /* Center the contact form inside of its parent element. */
 }
 
 input[type=text],
@@ -686,5 +686,5 @@ footer p {
 .js--wp-1.animate__animated,
 .js--wp-2.animate__animated,
 .js--wp-3.animate__animated {
-  opacity: 1;
+  opacity: 1; /* Hide the element before animation. */
 }

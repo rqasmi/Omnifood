@@ -9,7 +9,7 @@
   .row { padding: 0 2%; }
 }
 
-/* Small tablet to big tablet: from 768 (ipad) to 1023px */
+/* Small tablets to big tablets: from 768 to 1023px */
 @media only screen and (max-width: 1023px) {
   body { font-size: 18px; }
   section { padding: 60px 0; }
@@ -59,17 +59,17 @@
   .mobile-nav-icon { display: inline-block; }
   
   .main-nav {
-    float: left; /* Mve the icon to the right by moving the main nav to the left */
+    float: left; /* Move the icon to the right by moving the main nav to the left. */
     margin-top: 30px;
     margin-left: 25px;
   }
 
-  .main-nav li { display: block; } /* Under each other (force a line break) */
+  .main-nav li { display: block; } /* Force a line break. */
   
   .main-nav li a:link,
   .main-nav li a:visited {
     display: block;
-    border: 0; /* No hover on mobile screens */
+    border: 0; /* No hover on mobile screens. */
     padding: 10px 0;
     font-size: 100%;
   }
