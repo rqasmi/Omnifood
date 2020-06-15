@@ -1,0 +1,690 @@
+/* 
+Orange color: #e67e22
+
+*/
+
+/* ---------------------------------------------------------------------------- */
+/* BASIC SETUP */
+/*----------------------------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #fff;
+  color: #555;
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* This class will clear the float after an element. */
+
+.clearfix {zoom: 1}
+.clearfix:after {
+  content: '.';
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* ------- REUSABLE COMPONENTS ------- */
+/*----------------------------------------------------------------------------- */
+
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}   
+
+section {
+  padding: 80px 0px;
+}
+
+.box {
+  padding: 1%;
+}
+
+
+
+/* -------- PARAGRAPHS ---------*/
+.long-copy {
+  line-height: 145%; /* between 120 and 145% */
+  width: 70%;
+  margin-left: 15%; /* to center align */
+}
+
+/* --------- HEADINGS --------- */
+h1, 
+h2,
+h3 {
+  font-weight: 300; /* Make the h1 weight lighter*/
+  text-transform: uppercase; 
+}
+
+h1 {
+  margin-top: 0; /*To remove the whitespace at the top of the image*/
+  margin-bottom: 20px;
+  color: white;
+  font-size: 240%; /* Relative font size*/
+  word-spacing: 4px;
+  letter-spacing: 1px; 
+}
+
+h2 {
+  font-size: 180%;
+  word-spacing: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px; 
+}
+
+h3 {
+  font-size: 110%;
+  margin-bottom: 15px;
+}
+
+h2:after {
+  display: block;
+  height: 2px;
+  background-color: #e67e22;
+  content: " ";
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.box p {
+  font-size: 90%;
+  line-height: 145%;
+}
+
+/* -------- ICONS -----------*/
+.icon-big {
+  font-size: 350%;
+  display: block; /* force inline break */
+  color: #e67e22;
+  margin-bottom: 10px;
+}
+
+.icon-small {
+  display: inline-block; /* To assign some width.*/
+  width: 30px;
+  text-align: center;
+  color: #e67e22;
+  font-size: 120%;
+  margin-right: 10px;
+
+  /* Secrets to align text and icons vertically. */
+  line-height: 120%;
+  vertical-align: middle;
+  margin-top: -5px;
+}
+
+/*-------- LINKS -------- */
+
+a:link,
+a:visited {
+  color: #e67e22;
+  text-decoration: none;
+  padding-bottom: 1px; /* Space between link and bottom border. */
+  border-bottom: 1px solid #e67e22; /* Resemble an underline. */
+  transition: border-bottom 0.2s color 0.2s
+}
+
+a:hover,
+a:active {
+  color: #555;
+  border-bottom: 1px solid transparent;
+}
+
+/*-------- BUTTONS -------- */
+
+/* Make the link and visited states of the buttons under btn class the same design.*/
+.btn:link,
+.btn:visited,
+input[type=submit] {
+  display: inline-block; /* To be able to give to some padding and/or margin. Normally an <a> element is an inline element.*/
+  padding: 10px 30px;
+  font-weight: 300;
+  text-decoration: none; /* Remove the underline on the link*/
+  border-radius: 200px; /* Make it round edges*/
+  transition: background-color 0.2s, border 0.2s, color 0.2s; /* Transition time in the design when active or hovering from link/visited state*/
+}
+
+.btn-full:link, 
+.btn-full:visited,
+input[type=submit] {
+  background-color: #e67e22;
+  border: 1px solid #e67e22;
+  color: #fff;
+  margin-right: 15px; 
+}
+
+.btn-ghost:link, 
+.btn-ghost:visited{
+  border: 1px solid #e67e22;
+  color: #e67e22;
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+  background-color: #cf6d17;
+}
+
+.btn-full:hover, 
+.btn-full:active, 
+input[type=submit]:hover,
+input[type=submit]:active {
+  border: 1px solid #cf6d17;
+}
+
+.btn-ghost:hover, 
+.btn-ghost:active {
+  border: 1px solid #cf6d17; /* Darker border too. */
+  color: #fff;
+}
+
+
+/* -------------------------------------------------- */
+/* HEADER */
+/*--------------------------------------------------- */
+
+
+/* The linear gradient places another image on 
+top of the original image.
+
+*/
+
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero-min.jpg);
+  background-size: cover;  /* Scale the image while maintaining the aspect ratio*/
+  background-position: center; /* Center the background image afer resizing */
+  background-attachment: fixed; /* Image stays in the same place.*/
+  height: 100vh; /* 100% of the viewport*/
+}
+
+/* Want this box to be absolutely positioned because
+that is the only way we can vertically and horizontally 
+center it.*/
+
+.hero-text-box {
+  position: absolute;
+  width: 1140px; /* Max width*/
+  top: 50%; /* Center from the top relative to the containing element*/
+  left: 50%; /* Center from the left relative to the containing element*/
+  transform: translate(-50%, -50%); /* Translate the element by half its width and height to the top left*/
+}
+
+
+.logo {
+  height: 110px;
+  width: auto;
+  float: left; /* Float the element to the left. */
+  margin-top: 20px;
+}
+
+.logo-black {
+  display: none; /* Hidden in the normal state. */
+  height: 50px;
+  width: auto;
+  float: left; /* Float the element to the left. */
+  margin: 5px 0;
+}
+
+/* ------ MAIN NAVIGATION ----- */
+.main-nav {
+  float: right;
+  list-style: none;
+  margin-top: 55px;
+}
+
+.main-nav li {
+  display: inline-block;  /* Display list items side by side. */
+  margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+  padding: 8px 0;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+  border-bottom: 2px solid #e67e22;
+}
+
+/* Mobile navigation */
+.mobile-nav-icon {
+  float: right;
+  margin-top: 30px;
+  cursor: pointer; /* No href in element */
+  display: none;
+}
+
+.mobile-nav-icon i {
+  font-size: 200%;
+  color: #fff;
+}
+
+/* 
+ * Sticky naivgation. The sticky attribute will be 
+ * added by the jQuery code when scrolling past the header section. 
+ */
+.sticky {
+  position: fixed; /* The navigation stays always at the same point irrespective of our scrolling. */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 2px #efefef;
+  z-index: 9999; /* navigation on top of all elements. (9999 is the max value) */
+}
+
+.sticky .main-nav { margin-top: 18px; }
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+  padding: 16px 0;
+  color: #555;
+}
+
+.sticky .logo { display: none; } /* Hide the white logo. */
+.sticky .logo-black { display: block; } /* Make the black logo visible. */
+
+/* -------------------------------------------------- */
+/* FEATURES */
+/*--------------------------------------------------- */
+
+.section-features .long-copy {
+  margin-bottom: 30px;
+}
+
+
+/* -------------------------------------------------- */
+/* MEALS */
+/*--------------------------------------------------- */
+
+.section-meals {
+  padding: 0;
+}
+
+.meals-showcase {
+  list-style: none;
+  width: 100%;
+}
+
+.meals-showcase li {
+  display: block;
+  float: left; /* Display side by side. */
+  width: 25%;
+}
+
+.meal-photo {
+  width: 100%;
+  margin: 0; /* Redefine the margin to 0 because the normalize css places some margins*/
+  overflow: hidden; /* Hide the overflow of 1.15 scale of img.*/
+  background-color: black;  
+}
+
+.meal-photo img {
+  opacity: 0.7; /* Makes the image darker, but have to set  the container to black background*/
+  width: 100%;
+  height: auto;
+  transform: scale(1.15);
+  transition: transform 0.5s opacity 0.5s;
+}
+
+.meal-photo img:hover {
+  transform: scale(1.03); /* 1.03 instead of 1 to remove white line when zooming out.*/
+  opacity: 1;
+}
+
+/* -------------------------------------------------- */
+/* HOW-IT-WORKS */
+/*--------------------------------------------------- */
+
+.section-steps {
+ background-color: #f4f4f4; 
+}
+
+.steps-box:first-child {
+  text-align: right;
+  padding-right: 3%;
+  margin-top: 30px;
+}
+
+.steps-box:last-child {
+  text-align: left;
+  padding-left: 3%;
+  margin-top: 70px;
+}
+
+.app-screen {
+  width: 40%;
+}
+
+.works-step {
+  margin-bottom: 50px;
+}
+
+.works-step:last-of-type {
+  margin-bottom: 80px;
+}
+
+.works-step div {
+  color: #e67e22;
+  border: 2px solid #e67e22;
+  display: inline-block; /* Don't enforce a line break.*/
+  border-radius: 50%;
+  height: 54px;
+  width: 54px;
+  text-align: center;
+  padding: 5px;
+  float: left;
+  font-size: 150%;
+  margin-right: 25px;
+}
+
+.btn-app img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.btn-app:link,
+.btn-app:visited {
+  border: 0;
+}
+
+/* -------------------------------------------------- */
+/* CITIES */
+/*--------------------------------------------------- */
+
+.box img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px; 
+}
+
+.city-feature {
+  margin-bottom: 5px;
+}
+
+/* -------------------------------------------------- */
+/* CUSTOMER TESTIMONIALS */
+/*--------------------------------------------------- */
+
+
+.section-testimonials {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80)), url(img/back-customers-min.jpg);
+  background-size: cover;
+  color: #fff;
+  background-attachment: fixed; 
+}
+
+blockquote {
+  padding: 2%;
+  font-style: italic;
+  line-height: 145%;
+  position: relative;
+  margin-top: 40px;
+}
+
+blockquote:before {
+  content: "\201C";
+  font-size: 500%;
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+
+cite {
+  font-size: 90%;
+  margin-top: 25px;
+  display: block; /* New line. */
+}
+
+cite img {
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* -------------------------------------------------- */
+/* SIGN UP */
+/*--------------------------------------------------- */
+
+.section-plans {
+  background-color: #f4f4f4;
+}
+
+.plan-box {
+  background-color: #fff;
+  border-radius: 5px;
+  width: 90%;
+  margin-left: 5%; /* (100-90/2) */
+  box-shadow: 0 2px 2px #efefef; /* X-axis offset y-axis offset blur color*/
+}
+
+.plan-box div {
+  padding: 15px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.plan-box div:first-child {
+  background-color: #fcfcfc;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.plan-box div:last-child {
+  text-align: center;
+  border: 0;
+}
+
+.plan-price {
+  font-size: 300%;
+  font-weight: 170;
+  margin-bottom: 10px;
+  color: #e67e22;
+}
+
+.plan-price span {
+  font-size: 30%; /* Cannot use 100% percent because the parent element has 300%.*/
+  font-weight: 300;
+}
+
+.plan-price-meal {
+  font-size: 80%;
+}
+
+.plan-box ul {
+  list-style: none;
+}
+
+.plan-box ul li {
+  padding: 5px 0;
+}
+
+/* -------------------------------------------------- */
+/* FORM */
+/*--------------------------------------------------- */
+
+.contact-form {
+  width: 85%;
+  margin: 0 auto; /* center the contact form inside of its parent element */
+}
+
+input[type=text],
+input[type=email], 
+select,
+textarea {
+  width: 100%;
+  padding: 7px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  height: 100px;
+}
+
+input[type=checkbox] {
+  margin: 10px 5px 10px 0;
+}
+
+*:focus { outline: none; /* Remove the outline on input elements. */ }
+
+.map-box {
+  width: 100%;
+  height: 560px;
+  position: relative;
+}
+
+.map {
+  width: 100%;
+  height: 560px;
+  position: relative;
+  z-index: 0;
+}
+
+.form-box h2 {
+  font-size: 150%;
+}
+
+.form-box {
+  height: 560px;
+  width: 43%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: 40px;
+  background-color: rgba(255, 255, 255, 0.80);
+  z-index: 10;
+}
+
+/* -------------------------------------------------- */
+/* FOOTER */
+/*--------------------------------------------------- */
+
+footer {
+  background-color: #333;
+  padding: 40px;
+  font-size: 90%;
+}
+
+.footer-nav {
+  list-style: none;
+  float: left;
+}
+
+.social-links {
+  list-style: none;
+  float: right;
+}
+
+.footer-nav li,
+.social-links li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child {
+  margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+  text-decoration: none;
+  border: 0;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active,
+.social-links li a:hover,
+.social-links li a:active {
+  color: #ddd;
+}
+
+.social-links li a:link, 
+.social-links li a:visited {
+  font-size: 150%;
+}
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram {
+  transition: color 0.2s;
+}
+
+.ion-social-facebook:hover {
+  color: #3b5998;
+}
+
+.ion-social-twitter:hover {
+  color: #00aced;
+}
+
+.ion-social-googleplus:hover {
+  color: #dd4b39;
+}
+
+.ion-social-instagram:hover {
+  color: #517fa4;
+}
+
+
+footer p {
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* -------------------------------------------------- */
+/* ANIMATIONS */
+/*--------------------------------------------------- */
+
+.js--wp-1,
+.js--wp-2,
+.js--wp-3 {
+  opacity: 0;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.js--wp-4 {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+/* Element has both js--wp-1 class and animate__animated class. */
+.js--wp-1.animate__animated,
+.js--wp-2.animate__animated,
+.js--wp-3.animate__animated {
+  opacity: 1;
+}
