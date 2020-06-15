@@ -87,6 +87,7 @@ $(document).ready(function() {
     
     nav.slideToggle(200);
     
+	// Change the icon displayed
     if (icon.hasClass('ion-navicon-round')) {
         icon.addClass('ion-close-round');
         icon.removeClass('ion-navicon-round');
@@ -96,7 +97,7 @@ $(document).ready(function() {
     }        
   });
 
-  /* Maps */
+  /* Maps. Use the GMaps jQuery plugin */
   var map = new GMaps({
     div: '.map',
     lat: 38.7436057,

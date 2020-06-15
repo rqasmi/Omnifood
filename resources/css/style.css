@@ -110,7 +110,7 @@ h2:after {
 /* -------- ICONS -----------*/
 .icon-big {
   font-size: 350%;
-  display: block; /* force inline break */
+  display: block; /* force line break */
   color: #e67e22;
   margin-bottom: 10px;
 }
@@ -208,19 +208,18 @@ top of the original image.
 
 header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero-min.jpg);
-  background-size: cover;  /* Scale the image while maintaining the aspect ratio*/
+  background-size: cover;  /* Scale the image while maintaining the aspect ratio. */
   background-position: center; /* Center the background image afer resizing */
-  background-attachment: fixed; /* Image stays in the same place.*/
-  height: 100vh; /* 100% of the viewport*/
+  background-attachment: fixed; /* Image stays in the same place. */
+  height: 100vh; /* 100% of the viewport. */
 }
 
 /* Want this box to be absolutely positioned because
-that is the only way we can vertically and horizontally 
-center it.*/
+that is the only way we can vertically and horizontally center it.*/
 
 .hero-text-box {
   position: absolute;
-  width: 1140px; /* Max width*/
+  width: 1140px; /* Max width. */
   top: 50%; /* Center from the top relative to the containing element*/
   left: 50%; /* Center from the left relative to the containing element*/
   transform: translate(-50%, -50%); /* Translate the element by half its width and height to the top left*/
@@ -338,13 +337,13 @@ center it.*/
 
 .meal-photo {
   width: 100%;
-  margin: 0; /* Redefine the margin to 0 because the normalize css places some margins*/
-  overflow: hidden; /* Hide the overflow of 1.15 scale of img.*/
+  margin: 0; /* Redefine the margin to 0 because the normalize css places some margins. */
+  overflow: hidden; /* Hide the overflow of 1.15 scale of img. */
   background-color: black;  
 }
 
 .meal-photo img {
-  opacity: 0.7; /* Makes the image darker, but have to set  the container to black background*/
+  opacity: 0.7; /* Makes the image darker, but have to set the container to black background. */
   width: 100%;
   height: auto;
   transform: scale(1.15);
@@ -447,6 +446,7 @@ blockquote {
   margin-top: 40px;
 }
 
+/* Add quotation marks */
 blockquote:before {
   content: "\201C";
   font-size: 500%;
